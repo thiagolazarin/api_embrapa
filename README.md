@@ -6,6 +6,7 @@ Este é um projeto de API desenvolvido com Flask, que inclui operações web scr
 
 - **Autenticação Básica**: Protege rotas sensíveis usando autenticação HTTP básica.
 - **Web Scraping**: Extrai dados de páginas web (título, cabeçalhos, parágrafos) usando BeautifulSoup.
+- **Banco de dados SQLite**: Armaneza os dados extraídos através do web scraping.
 - **Cache e Documentação**: Implementa cache para otimização e documentação automática com Swagger.
 
 ## 📁 Estrutura do Projeto
