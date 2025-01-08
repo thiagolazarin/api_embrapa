@@ -23,11 +23,15 @@ intro_api/
 │   ├── utils/
 │   │   ├── __init__.py
 │   │   └── auth.py
+│   │   └── database.py
+│   │   └── init_data.py
 │   ├── __init__.py
 │   └── config.py
+├── data.db
 ├── requirements.txt
 ├── Dockerfile
 ├── README.md
+└── run_data.py
 └── run.py
 ```
 
@@ -36,6 +40,7 @@ intro_api/
   - **`services/`**: Serviços para lógica de negócios, como scraping.
   - **`utils/`**: Utilitários, como autenticação.
   - **`config.py`**: Configurações da aplicação Flask.
+- **`run_data.py`**: Alimenta o banco de dados através do web scraping.
 - **`run.py`**: Ponto de entrada para iniciar o aplicativo.
 - **`requirements.txt`**: Lista de dependências do projeto.
 - **`Dockerfile`**: Configurações para Docker.
