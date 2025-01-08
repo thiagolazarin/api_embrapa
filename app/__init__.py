@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_caching import Cache
-from flasgger import Swagger
 from flask_httpauth import HTTPBasicAuth
+from flasgger import Swagger
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -11,7 +11,6 @@ app.config.from_object('app.config.Config')
 cache = Cache(app)
 auth = HTTPBasicAuth()
 
-# Configure Swagger
 swagger = Swagger(app)
 
 from app.utils import auth as auth_utils

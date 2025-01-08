@@ -1,6 +1,5 @@
 from flask import jsonify
 from app import app, auth, cache
-#from app.services.scraping_service import get_producao_data, get_processamento_data, get_comercializacao_data, get_importacao_data, get_exportacao_data
 from app.utils.database import get_connection
 import pandas as pd
 
@@ -8,14 +7,33 @@ import pandas as pd
 @auth.login_required
 @cache.cached()
 def home():
-    return "Desafio FIAP"
+    """
+    Página inicial do projeto.
+    ---
+    responses:
+      200:
+        description: Retorna a mensagem da página inicial.
+    """
+    return "Projeto FIAP primeira etapa"
 
 @app.route('/api/producao', methods=['GET'])
 @auth.login_required
 @cache.cached()
 def producao():
     """
-    Endpoint para obter os dados de produção.
+    Obter dados de produção.
+    ---
+    responses:
+      200:
+        description: Dados de produção retornados com sucesso.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+      500:
+        description: Erro ao obter os dados de produção.
     """
     try:
         conn = get_connection()
@@ -32,7 +50,19 @@ def producao():
 @cache.cached()
 def processamento():
     """
-    Endpoint para obter os dados de processamento.
+    Obter dados de processamento.
+    ---
+    responses:
+      200:
+        description: Dados de processamento retornados com sucesso.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+      500:
+        description: Erro ao obter os dados de processamento.
     """
     try:
         conn = get_connection()
@@ -49,7 +79,19 @@ def processamento():
 @cache.cached()
 def comercializacao():
     """
-    Endpoint para obter os dados de comercializacao.
+    Obter dados de comercialização.
+    ---
+    responses:
+      200:
+        description: Dados de comercialização retornados com sucesso.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+      500:
+        description: Erro ao obter os dados de comercialização.
     """
     try:
         conn = get_connection()
@@ -66,7 +108,19 @@ def comercializacao():
 @cache.cached()
 def importacao():
     """
-    Endpoint para obter os dados de importacao.
+    Obter dados de importação.
+    ---
+    responses:
+      200:
+        description: Dados de importação retornados com sucesso.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+      500:
+        description: Erro ao obter os dados de importação.
     """
     try:
         conn = get_connection()
@@ -83,7 +137,19 @@ def importacao():
 @cache.cached()
 def exportacao():
     """
-    Endpoint para obter os dados de exportacao.
+    Obter dados de exportação.
+    ---
+    responses:
+      200:
+        description: Dados de exportação retornados com sucesso.
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+      500:
+        description: Erro ao obter os dados de exportação.
     """
     try:
         conn = get_connection()
